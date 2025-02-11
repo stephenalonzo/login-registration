@@ -51,7 +51,7 @@ require_once ('./controller.php');
                         </svg>
                     </span>
                 </div>
-                <?php if (isset($_POST['login']) && empty($_POST['email'])) { ?><p class="text-red-500 text-sm p-2">* Field required</p><?php } ?>
+                <?php echo $message; ?>
             </div>
 
             <div>
@@ -84,7 +84,7 @@ require_once ('./controller.php');
                         </svg>
                     </span>
                 </div>
-                <?php if (isset($_POST['login']) && empty($_POST['password'])) { ?><p class="text-red-500 text-sm p-2">* Field required</p><?php } ?>
+                <?php echo $message; ?>
             </div>
 
             <div class="flex items-center justify-between">

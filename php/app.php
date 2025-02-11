@@ -10,7 +10,7 @@ function dbConnect($conn)
 
         $conn = new PDO("mysql:host=$servername;dbname=log_reg_system", $username, '');
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        echo 'Connected successfully'; // debug
+        echo 'Connected successfully';
 
     } catch (PDOException $e) {
 
@@ -92,11 +92,15 @@ function userLogin($conn)
                 $_SESSION['id'] = $user['id'];
                 header("Location: index.php");
     
+            } else {
+
+                $message = '<p class="text-red-500 text-sm p-2">The username and/or password does not match. Please try again.</p>';
+
             }
     
         }
     
-        return $stmt;
+        return $message;
 
     }
 

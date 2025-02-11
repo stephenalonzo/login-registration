@@ -17,7 +17,7 @@ foreach ($_REQUEST as $key => $value)
         break;
 
         case 'login':
-            userLogin($conn);
+            $message = userLogin($conn);
         break;
 
         case 'logout':
